@@ -47,9 +47,6 @@ var Card = React.createClass({
             </div>
         </div>
         <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName}/>
-        <div className="footer">
-          {this.props.type} - {this.props.data.level}
-        </div>
       </div>
     );
   }

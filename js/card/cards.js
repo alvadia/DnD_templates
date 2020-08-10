@@ -40,7 +40,7 @@ var Card = React.createClass({
     else return (
       <div className={cardClass}>
         <div className="title"><span className="fs">{this.props.data.name}</span></div>
-        <div className="level">{this.props.data.level}, {this.props.data.type}</div>
+        <div className="level">{this.props.data.type}</div>
         <div className="props">
             <div className="prop">
               <div className="propName">Время накладывания</div>

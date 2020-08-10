@@ -237,64 +237,9 @@ var Cards = React.createClass({
     // var classType = {""}[this.state.type]
 
     return (
-      <div>
-        <select value={this.state.selectedClass} onChange={this.handleChange}>
-          <option value="Все">Все</option>
-          <option value="Бард">Бард</option>
-          <option value="Волшебник">Волшебник</option>
-          <option value="Друид">Друид</option>
-          <option value="Жрец">Жрец</option>
-          <option value="Жрец Бури">Жрец Бури</option>
-          
-          <option value="Жрец Войны">Жрец Войны</option>
-          <option value="Жрец Жизни">Жрец Жизни</option>
-          <option value="Жрец Знания">Жрец Знания</option>
-          <option value="Жрец Обмана">Жрец Обмана</option>
-          <option value="Жрец Природы">Жрец Природы</option>
-          <option value="Жрец Света">Жрец Света</option>
-
-          <option value="Колдун">Колдун</option>
-          <option value="Паладин">Паладин</option>
-          <option value="Следопыт">Следопыт</option>
-          <option value="Чародей">Чародей</option>
-        </select> | 
-        <input type="checkbox" 
-              checked={this.state.lvl0}
-              onChange={(e) => this.handleChangeLvl(0, e)} /> 0 |
-        <input type="checkbox" 
-              checked={this.state.lvl1}
-              onChange={(e) => this.handleChangeLvl(1, e)} /> 1 |
-        <input type="checkbox" 
-              checked={this.state.lvl2}
-              onChange={(e) => this.handleChangeLvl(2, e)} /> 2 |
-        <input type="checkbox" 
-              checked={this.state.lvl3}
-              onChange={(e) => this.handleChangeLvl(3, e)} /> 3 |
-        <input type="checkbox" 
-              checked={this.state.lvl4}
-              onChange={(e) => this.handleChangeLvl(4, e)} /> 4 |
-        <input type="checkbox" 
-              checked={this.state.lvl5}
-              onChange={(e) => this.handleChangeLvl(5, e)} /> 5 |
-        <input type="checkbox" 
-              checked={this.state.lvl6}
-              onChange={(e) => this.handleChangeLvl(6, e)} /> 6 |
-        <input type="checkbox" 
-              checked={this.state.lvl7}
-              onChange={(e) => this.handleChangeLvl(7, e)} /> 7 |
-        <input type="checkbox" 
-              checked={this.state.lvl8}
-              onChange={(e) => this.handleChangeLvl(8, e)} /> 8 |
-        <input type="checkbox" 
-              checked={this.state.lvl9}
-              onChange={(e) => this.handleChangeLvl(9, e)} /> 9 |
-        <input type="checkbox" 
-            checked={this.state.showBacks}
-            onChange={this.showBacksChange} /> Back
         <div className="cards" >
           {cardNodes}
         </div>
-      </div>
     );
   }
 });

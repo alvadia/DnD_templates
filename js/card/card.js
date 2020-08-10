@@ -27,7 +27,7 @@ var Card = React.createClass({
     return (
       <div className={cardClass}>
         <div className="title"><span className="fs">{this.props.data.name}</span></div>
-        <div className="level">{this.props.data.level}, {this.props.data.type}</div>
+        <div className="level">{this.props.data.type}</div>
         <div className="props">
             <div className="prop">
               <div className="propName">Время накладывания</div>
@@ -47,6 +47,9 @@ var Card = React.createClass({
             </div>
         </div>
         <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName}/>
+        <div className="footer">
+          {this.props.data.level}
+        </div>
       </div>
     );
   }

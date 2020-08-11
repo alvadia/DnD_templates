@@ -133,7 +133,6 @@ body {
 }
 .textWild {
 	height: 71mm;
-	width: 60mm;
 	border-radius: 0 0 2mm 2mm ;
 	box-sizing:border-box;
 	position: relative;
@@ -142,6 +141,7 @@ body {
         line-height: 2.3mm;
         margin-top: 1.3mm;
         margin-bottom: 1.3mm;
+        padding: 0 1.9mm;
 }
 .text.bigName {
 	height: 52mm;

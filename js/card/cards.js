@@ -37,24 +37,33 @@ var Card = React.createClass({
         </div>
       );
     }
+    else if (this.props.data.level == "Дикий облик") return (
+      <div className={cardClass}>
+        <div className="title"><span className="fs">{this.props.data.name}</span></div>
+        <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName}/>
+        <div className="footer">
+          {this.props.data.level}
+        </div>
+      </div>
+    );
     else return (
       <div className={cardClass}>
         <div className="title"><span className="fs">{this.props.data.name}</span></div>
         <div className="level">{this.props.data.type}</div>
         <div className="props">
-            <div className="prop">
+            <div className="time">
               <div className="propName">Время накладывания</div>
               <div className="propValue">{this.props.data.time}</div>
             </div>
-            <div className="prop">
+            <div className="distance">
               <div className="propName">Дистанция</div>
               <div className="propValue">{this.props.data.range}</div>
             </div>
-            <div className="prop">
+            <div className="componentss">
               <div className="propName">Компоненты</div>
               <div className="propValue">{this.props.data.components}</div>
             </div>
-            <div className="prop">
+            <div className="duration">
               <div className="propName">Длительность</div>
               <div className="propValue">{this.props.data.duration}</div>
             </div>

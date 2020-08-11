@@ -77,6 +77,24 @@ var Card = React.createClass({
   }
 });
 
+var WildCard = React.createClass({
+  render: function() {
+    var fontSizeClass = 'textWild';
+    var cardText = this.props.text.map(function(pText, ind) {
+      var pClass = ind == 0 ? "first" : "";
+      return (
+        <p className={pClass}>{pText}</p>
+      );
+    });
+    return (
+      <div className={fontSizeClass}>
+        <div className="level"></div>
+        {cardText}
+      </div>
+    );
+  }
+});
+
 var CardText = React.createClass({
   render: function() {
     var fontSizeClass = 'text';

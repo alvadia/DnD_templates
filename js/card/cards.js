@@ -40,7 +40,7 @@ var Card = React.createClass({
     else if (this.props.data.level == "Дикий облик") return (
       <div className={cardClass}>
         <div className="title"><span className="fs">{this.props.data.name}</span></div>
-        <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName}/>
+        <WildCard text={this.props.data.text} bigName={bigName}/>
         <div className="footer">
           {this.props.data.level}
         </div>

@@ -132,13 +132,13 @@ body {
 	font-weight: normal;
 }
 .textWild {
-	height: 80mm;
+	height: 77mm;
 	border-radius: 0 0 20px 20px ;
 	border: 2px solid  #C03E2E;
 	box-sizing:border-box;
 	position: relative;
 	background-color: #fff;
-        font-size: 2mm;
+        font-size: 2.8mm;
         line-height: 1.8mm;
         margin-top: 1mm;
         margin-bottom: 1mm;

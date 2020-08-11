@@ -133,6 +133,7 @@ body {
 }
 .textWild {
 	height: 71mm;
+	width: 60mm;
 	border-radius: 0 0 2mm 2mm ;
 	box-sizing:border-box;
 	position: relative;

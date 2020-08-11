@@ -51,19 +51,19 @@ var Card = React.createClass({
         <div className="title"><span className="fs">{this.props.data.name}</span></div>
         <div className="level">{this.props.data.type}</div>
         <div className="props">
-            <div className="time">
+            <div className="prop">
               <div className="propName">Время накладывания</div>
               <div className="propValue">{this.props.data.time}</div>
             </div>
-            <div className="distance">
+            <div className="prop">
               <div className="propName">Дистанция</div>
               <div className="propValue">{this.props.data.range}</div>
             </div>
-            <div className="componentss">
+            <div className="prop">
               <div className="propName">Компоненты</div>
               <div className="propValue">{this.props.data.components}</div>
             </div>
-            <div className="duration">
+            <div className="prop">
               <div className="propName">Длительность</div>
               <div className="propValue">{this.props.data.duration}</div>
             </div>

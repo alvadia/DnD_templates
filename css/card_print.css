@@ -132,9 +132,8 @@ body {
 	font-weight: normal;
 }
 .textWild {
-	height: 77mm;
+	height: 71mm;
 	border-radius: 0 0 2mm 2mm ;
-	border: 2px solid  #C03E2E;
 	box-sizing:border-box;
 	position: relative;
 	background-color: #fff;

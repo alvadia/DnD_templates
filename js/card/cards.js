@@ -273,6 +273,6 @@ var Cards = React.createClass({
 
 
 ReactDOM.render(
-  <Cards url="api/cards.json" pollInterval={5000} type="Бард"/>,
+  <Cards url=$('script').data('json') pollInterval={5000} type="Бард"/>,
   document.getElementById('content')
 );

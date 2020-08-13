@@ -273,6 +273,6 @@ var Cards = React.createClass({
 
 
 ReactDOM.render(
-  <Cards url="api/sveta.json" pollInterval={5000} type="Друид"/>,
+  <Cards url="api/cards.json" pollInterval={5000} type="Друид"/>,
   document.getElementById('content')
 );

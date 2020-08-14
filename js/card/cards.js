@@ -88,8 +88,8 @@ var Card = React.createClass({
 var CardText = React.createClass({
   render: function() {
     var fontSizeClass = 'text';
-    var fontSizeClass += ' '+this.props.size;
-    var fontSizeClass += ' '+this.props.font;
+    fontSizeClass += ' ' + this.props.size;
+    fontSizeClass += ' ' + this.props.font;
 
     var cardText = this.props.text.map(function(pText, ind) {
       var pClass = ind == 0 ? "first" : "";

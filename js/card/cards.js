@@ -9,7 +9,7 @@ var Card = React.createClass({
     } 
     var bigName = bigNameLength > 26 ? true : false;
     if (this.props.showBack) {
-      var lvlNum = this.props.data.level == 'Заговор' ? 0 : this.props.data.level.substr(0,1);
+      var lvlNum = this.props.data.level.substr(0,1);
       return (
         <div className="card_back">
           <div className='number'>{lvlNum}</div>
@@ -188,7 +188,7 @@ var Cards = React.createClass({
       return (
       <div className="cards">
       <p> This is Cards javascript 7 </p>
-          {cardNodes.join('')}
+      JSON.stringify(cardNodes)
       </div>
     );
   }

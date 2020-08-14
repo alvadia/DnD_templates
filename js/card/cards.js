@@ -152,7 +152,6 @@ var Cards = React.createClass({
       }.bind(this)
     });
   },
-  },
   getInitialState: function() {
     return {data: [], selectedClass: 'Все', showBacks: false, 
     lvl0: false,

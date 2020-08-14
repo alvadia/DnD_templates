@@ -177,7 +177,7 @@ var Cards = React.createClass({
     this.setState({showBacks: !this.state.showBacks  });
   },
   render: function() {
-      cardNodes = this.cards.map(function(card) {
+      var cardNodes = this.cards.map(function(card) {
         return (
           <Card data={card} showBack={this.state.showBacks}/>
           );

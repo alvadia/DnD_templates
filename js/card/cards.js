@@ -144,12 +144,14 @@ var Cards = React.createClass({
       cache: false,
       success: function(data) {
         var text = data.replace(/\r\n/g,' ')
-        this.cards = JSON.parse(text).cards;
+        var arr = JSON.parse(text);
+        this.cards = arr.cards;
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
+  },
   },
   getInitialState: function() {
     return {data: [], selectedClass: 'Все', showBacks: false, 
@@ -179,16 +181,38 @@ var Cards = React.createClass({
   showBacksChange: function(event) {
     this.setState({showBacks: !this.state.showBacks  });
   },
-  render: function() {
-      var cardNodes = this.cards.map(function(card) {
+  render: function() 
+      var cardNodes = ''
+      cardNodes = arr.map(function(card) {
         return (
           <Card data={card} showBack={this.state.showBacks}/>
           );
         }, this);
       return (
       <div className="cards">
+      <Card data={{
+  "name": "Отражение снарядов",
+  "class": "Умение",
+  "level": "Навык",
+  "type": "",
+  "time": "Реакция",
+  "range": "60 футов",
+  "components": "С",
+  "duration": "мгновенно",
+  "text": ["Вы можете реакцией отразить или поймать снаряд, если по вам попали атакой дальнобойным оружием. 
+Если вы делаете это, урон снижается на 1к10 + модификатор Ловкости + 8. ",
+"Если вы снизили урон до 0, вы можете поймать снаряд в случае, если он достаточно мал, 
+чтоб держать его одной рукой, и одна из ваших рук свободна. Если вы поймали снаряд с помощью этого умения, 
+вы можете потратить одно очко ци, чтобы частью реакции совершить дальнобойную атаку пойманным оружием 
+или боеприпасом с дистанцией 20/60 футов. Вы совершаете эту атаку с владением, вне зависимости от владения данным оружием, 
+и этот снаряд считается для данной атаки монашеским оружием. "
+],
+  "hightlevel": [
+  ]
+}} showBack={this.state.showBacks}/>
       <p> This is Cards javascript 9 </p>
         {JSON.stringify(this.cards)}
+        {cardNodes}
       </div>
     );
   }

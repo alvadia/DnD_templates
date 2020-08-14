@@ -34,7 +34,7 @@ var Card = React.createClass({
       else if (
            (this.props.data.components && this.props.data.components.length)
         || (this.props.data.duration && this.props.data.duration.length)
-        ) {return ("
+        ) {return (
         <div className="card_med">
           <p>card_med</p>
           <div className="title"><span className="fs">{this.props.data.name}</span></div>

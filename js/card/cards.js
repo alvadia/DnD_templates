@@ -141,7 +141,7 @@ var Cards = React.createClass({
       cache: false,
       success: function(data) {
         var text = data.replace(/\r\n/g,' ')
-        this.cards = JSON.parse(text);
+        this.cards = JSON.parse(text).cards;
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -191,6 +191,6 @@ var Cards = React.createClass({
 });
 
 ReactDOM.render(
-  <Cards url="api/cards.json" pollInterval={5000} type=""/>,
+  <Cards url="api/cards.json" pollInterval={5000} type=""/>, #{document.getElementById("cards_builder").dataset.json}
   document.getElementById('content')
 );

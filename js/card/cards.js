@@ -179,7 +179,7 @@ var Cards = React.createClass({
   render: function() {
     return (
         <div className="cards" >
-          <p>This is Cards js</p>
+          <p>This is Cards javascript</p>
           {this.cards.map(
             function(card) {
             return (<Card data={card} showBack={this.state.showBacks}/>);
@@ -191,6 +191,6 @@ var Cards = React.createClass({
 });
 
 ReactDOM.render(
-  <Cards url="api/cards.json" pollInterval={5000} type=""/>, #{document.getElementById("cards_builder").dataset.json}
+  <Cards url="api/cards.json" pollInterval={5000} type=""/>, //{document.getElementById("cards_builder").dataset.json}
   document.getElementById('content')
 );

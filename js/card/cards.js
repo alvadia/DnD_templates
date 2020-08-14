@@ -22,7 +22,7 @@ var Card = React.createClass({
            (this.props.data.time && this.props.data.time.length)
         || (this.props.data.range && this.props.data.range.length)
         ) return (
-        <div className="card_big" style=card_big>
+        <div className="card_big">
           <div className="title"><span className="fs">{this.props.data.name}</span></div>
           <CardText text={this.props.data.text} bigName={bigName} size="max" font = this.props.data.font/>
           <div className="footer">
@@ -34,7 +34,7 @@ var Card = React.createClass({
            (this.props.data.components && this.props.data.components.length)
         || (this.props.data.duration && this.props.data.duration.length)
         ) return (
-        <div className="card_med" style=card_med>
+        <div className="card_med">
           <div className="title"><span className="fs">{this.props.data.name}</span></div>
           <div className="level">{this.props.data.type}</div>
           <div className="props">
@@ -54,7 +54,7 @@ var Card = React.createClass({
         </div>
       );
       else return (
-        <div className="card_small" style=card_small>
+        <div className="card_small">
           <div className="title"><span className="fs">{this.props.data.name}</span></div>
           <div className="level">{this.props.data.type}</div>
           <div className="props">

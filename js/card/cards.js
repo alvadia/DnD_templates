@@ -174,17 +174,14 @@ var Cards = React.createClass({
     this.setState({showBacks: !this.state.showBacks  });
   },
   render: function() {
-    var cardNodes = '';
-    if (this.state.selectedClass == 'Все') {
-      cardNodes = this.cards.map(function(card) {
-        return (
-          <Card data={card} showBack={this.state.showBacks}/>
-          );
-        }, this);
-    }
     return (
         <div className="cards" >
-          {cardNodes}
+          {this.cards.map(function(card) {
+            return (
+              <Card data={card} showBack={this.state.showBacks}/>
+              );
+            }, this);
+          }
         </div>
     );
   }

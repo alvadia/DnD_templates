@@ -191,6 +191,6 @@ var Cards = React.createClass({
 });
 
 ReactDOM.render(
-  <Cards url=document.getElementById("cards_builder").dataset.json pollInterval={5000} type=""/>,
+  <Cards url={document.getElementById("cards_builder").dataset.json} pollInterval={5000} type=""/>,
   document.getElementById('content')
 );

@@ -85,7 +85,9 @@ var Card = React.createClass({
         </div>
       );}
     }
-    return (JSON.stringify(this.props.data));
+    return (
+        <p> We missed condition </p>
+      );
   }
 });
 

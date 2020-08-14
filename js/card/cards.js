@@ -179,7 +179,7 @@ var Cards = React.createClass({
   render: function() {
     return (
         <div className="cards" >
-          <p>This is Cards javascript</p>
+          <p>This is Cards javascript 2</p>
           {this.cards.map(
             function(card) {
             return (<Card data={card} showBack={this.state.showBacks}/>);

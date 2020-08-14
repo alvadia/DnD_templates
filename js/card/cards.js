@@ -23,6 +23,7 @@ var Card = React.createClass({
         || (this.props.data.range && this.props.data.range.length)
         ) {return (
         <div className="card_big">
+          <p>card_big</p>
           <div className="title"><span className="fs">{this.props.data.name}</span></div>
           <CardText text={this.props.data.text} bigName={bigName} size="max" font={this.props.data.font}/>
           <div className="footer">
@@ -35,6 +36,7 @@ var Card = React.createClass({
         || (this.props.data.duration && this.props.data.duration.length)
         ) {return (
         <div className="card_med">
+          <p>card_med</p>
           <div className="title"><span className="fs">{this.props.data.name}</span></div>
           <div className="level">{this.props.data.type}</div>
           <div className="props">
@@ -55,6 +57,7 @@ var Card = React.createClass({
       );}
       else {return (
         <div className="card_small">
+          <p>card_small</p>
           <div className="title"><span className="fs">{this.props.data.name}</span></div>
           <div className="level">{this.props.data.type}</div>
           <div className="props">

@@ -181,7 +181,8 @@ var Cards = React.createClass({
     this.setState({showBacks: !this.state.showBacks  });
   },
   render: function() {
-      var cardNodes = ''
+      var arr = [];
+      var cardNodes = '';
       cardNodes = arr.map(function(card) {
         return (
           <Card data={card} showBack={this.state.showBacks}/>

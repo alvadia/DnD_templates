@@ -1,6 +1,24 @@
 
 var Card = React.createClass({
   render: function() {
+    var typeClassIndex = {
+      "Волшебник": "cardArcane",
+      "Колдун": "cardKoldun",
+      "Чародей": "cardSorserer",
+      "Следопыт": "cardRanger",
+      "Жрец": "cardCleric",
+      "Жрец Бури" : "cardCleric",
+      "Жрец Войны":"cardCleric",
+      "Жрец Жизни":"cardCleric",
+      "Жрец Знания":"cardCleric",
+      "Жрец Обмана":"cardCleric",
+      "Жрец Природы":"cardCleric",
+      "Жрец Света":"cardCleric",
+      "Друид": "cardDruid",
+      "Паладин": "cardPaladin",
+      "Бард": "cardBard"
+    };
+    var typeClass = typeClassIndex[this.props.type];
     var bigNameLength = this.props.data.name.length;
     for (var i = 0; i <bigNameLength; i++) {
       if (~['Ж','Ш','Щ','М','ж','ш','щ','м'].indexOf(this.props.data.name[i])) {
@@ -8,94 +26,82 @@ var Card = React.createClass({
       }
     } 
     var bigName = bigNameLength > 26 ? true : false;
+    var cardClass = 'card ' + typeClass
     if (this.props.showBack) {
-      var lvlNum = this.props.data.level.substr(0,1);
+      cardClass += ' back';
+      var lvlNum = this.props.data.level == 'Заговор' ? 0 : this.props.data.level.substr(0,1);
       return (
-        <div className="card_back">
+        <div className={cardClass}>
           <div className='number'>{lvlNum}</div>
           <div className='number2'>{lvlNum}</div>
         </div>
       );
     }
-    else {
-      if (
-           (this.props.data.time && this.props.data.time.length)
-        || (this.props.data.range && this.props.data.range.length)
-        ) {return (
-        <div className="card_big">
-          <p>card_big</p>
-          <div className="title"><span className="fs">{this.props.data.name}</span></div>
-          <CardText text={this.props.data.text} bigName={bigName} size="max" font={this.props.data.font}/>
-          <div className="footer">
-            {this.props.data.level}
-          </div>
+    else return (
+      <div className={cardClass}>
+        <div className="title"><span className="fs">{this.props.data.name}</span></div>
+        <div className="level">{this.props.data.level}, {this.props.data.type}</div>
+        <div className="props">
+            <div className="prop">
+              <div className="propName">Время накладывания</div>
+              <div className="propValue">{this.props.data.time}</div>
+            </div>
+            <div className="prop">
+              <div className="propName">Дистанция</div>
+              <div className="propValue">{this.props.data.range}</div>
+            </div>
+            <div className="prop">
+              <div className="propName">Компоненты</div>
+              <div className="propValue">{this.props.data.components}</div>
+            </div>
+            <div className="prop">
+              <div className="propName">Длительность</div>
+              <div className="propValue">{this.props.data.duration}</div>
+            </div>
         </div>
-      );}
-      else if (
-           (this.props.data.components && this.props.data.components.length)
-        || (this.props.data.duration && this.props.data.duration.length)
-        ) {return (
-        <div className="card_med">
-          <p>card_med</p>
-          <div className="title"><span className="fs">{this.props.data.name}</span></div>
-          <div className="level">{this.props.data.type}</div>
-          <div className="props">
-              <div className="prop">
-                <div className="propName">Время накладывания</div>
-                <div className="propValue">{this.props.data.time}</div>
-              </div>
-              <div className="prop">
-                <div className="propName">Дистанция</div>
-                <div className="propValue">{this.props.data.range}</div>
-              </div>
-          </div>
-          <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName} size="med" font={this.props.data.font}/>
-          <div className="footer">
-            {this.props.data.level}
-          </div>
+        <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName}/>
+        <div className="footer">
+          {this.props.type} - {this.props.data.level}
         </div>
-      );}
-      else {return (
-        <div className="card_small">
-          <p>card_small</p>
-          <div className="title"><span className="fs">{this.props.data.name}</span></div>
-          <div className="level">{this.props.data.type}</div>
-          <div className="props">
-              <div className="prop">
-                <div className="propName">Время накладывания</div>
-                <div className="propValue">{this.props.data.time}</div>
-              </div>
-              <div className="prop">
-                <div className="propName">Дистанция</div>
-                <div className="propValue">{this.props.data.range}</div>
-              </div>
-              <div className="prop">
-                <div className="propName">Компоненты</div>
-                <div className="propValue">{this.props.data.components}</div>
-              </div>
-              <div className="prop">
-                <div className="propName">Длительность</div>
-                <div className="propValue">{this.props.data.duration}</div>
-              </div>
-          </div>
-          <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName} size="min" font={this.props.data.font}/>
-          <div className="footer">
-            {this.props.data.level}
-          </div>
-        </div>
-      );}
-    }
-    return (
-        <p> We missed condition </p>
-      );
+      </div>
+    );
   }
 });
 
 var CardText = React.createClass({
   render: function() {
     var fontSizeClass = 'text';
-    fontSizeClass += ' ' + this.props.size;
-    fontSizeClass += ' ' + this.props.font;
+    var len = 0;
+    this.props.text.forEach(function(pText, ind) {
+      len += pText.length;
+    })
+
+    if (this.props.bigName) {
+      if (len > 900) {
+        if (len > 1000) {
+          fontSizeClass += ' small';
+        }
+        else {
+          fontSizeClass += ' preSmall'
+        }
+      }
+    } else {
+      // if (len > 1150) {
+        if (len > 1250) {
+          fontSizeClass += ' small';
+        }
+        else {
+          // fontSizeClass += ' preSmall'
+        }
+      // }
+    }
+
+    // if ((len > 1000 && this.props.bigName) || len > 1250) {
+    //     fontSizeClass += ' small';
+    // }
+    if (this.props.bigName) {
+      fontSizeClass += ' bigName';
+    }
 
     var cardText = this.props.text.map(function(pText, ind) {
       var pClass = ind == 0 ? "first" : "";
@@ -136,6 +142,7 @@ var HigherLevels = React.createClass({
 });
 
 var Cards = React.createClass({
+  classesCard : {},
   cards : [],
   loadCommentsFromServer: function() {
     $.ajax({
@@ -145,7 +152,9 @@ var Cards = React.createClass({
       success: function(data) {
         var text = data.replace(/\r\n/g,' ')
         var arr = JSON.parse(text);
+        this.classesCard = arr.classesCard;
         this.cards = arr.cards;
+        this.setState({selectedClass: 'Все'});
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -167,6 +176,7 @@ var Cards = React.createClass({
   },
   componentDidMount: function() {
     this.loadCommentsFromServer();
+    // setInterval(this.loadCommentsFromServer, this.props.pollInterval);
   },
   handleChange: function(event) {
     this.setState({selectedClass: event.target.value});
@@ -181,39 +191,63 @@ var Cards = React.createClass({
     this.setState({showBacks: !this.state.showBacks  });
   },
   render: function() {
-      var arr = [];
-      var cardNodes = '';
-      cardNodes = arr.map(function(card) {
+    var cardNodes = '';
+    if (this.state.selectedClass == 'Все') {
+      cardNodes = this.cards.map(function(card) {
         return (
-          <Card data={card} showBack={this.state.showBacks}/>
+          <Card data={card} type={this.state.selectedClass} showBack={this.state.showBacks}/>
           );
         }, this);
-      return (
-      <div className="cards">
-      <Card data={{
-  "name": "Отражение снарядов",
-  "class": "Умение",
-  "level": "Навык",
-  "type": "",
-  "time": "Реакция",
-  "range": "60 футов",
-  "components": "С",
-  "duration": "мгновенно",
-  "text": ["Вы можете реакцией отразить или поймать снаряд, если по вам попали атакой дальнобойным оружием. Если вы делаете это, урон снижается на 1к10 + модификатор Ловкости + 8. ",
-"Если вы снизили урон до 0, вы можете поймать снаряд в случае, если он достаточно мал, чтоб держать его одной рукой, и одна из ваших рук свободна. Если вы поймали снаряд с помощью этого умения, вы можете потратить одно очко ци, чтобы частью реакции совершить дальнобойную атаку пойманным оружием или боеприпасом с дистанцией 20/60 футов. Вы совершаете эту атаку с владением, вне зависимости от владения данным оружием, и этот снаряд считается для данной атаки монашеским оружием. "
-],
-  "hightlevel": [
-  ]
-}} showBack={this.state.showBacks}/>
-      <p> This is Cards javascript 9 </p>
-        {JSON.stringify(this.cards)}
-        {cardNodes}
+    } else {
+      var arr = [];
+      this.cards.forEach(function(card) {
+        var lvlNum = card.level == 'Заговор' ? 0 : card.level.substr(0,1);
+        var lvlName = 'lvl' + lvlNum;
+        if (this.state[lvlName] && ~this.classesCard[this.state.selectedClass].indexOf(card.name )) {
+          arr.push(card)
+        } 
+        else {
+        }
+      }, this)
+
+      arr.sort(function(self) {
+        return function(a,b) {
+          return self.classesCard[self.state.selectedClass].indexOf(a.name) - self.classesCard[self.state.selectedClass].indexOf(b.name) ;
+        }
+      }(this))
+
+      
+      if (this.state.showBacks) {
+        var tempArr = [];
+        while (arr.length) {
+          var slice = arr.splice(0,3);
+          for (var i = slice.length - 1; i >= 0; i--) {
+            tempArr.push(slice[i])
+          }
+        }
+        arr = tempArr;
+      console.log(this.state.showBacks)
+      }
+      cardNodes = arr.map(function(card) {
+        return (
+          <Card data={card} type={this.state.selectedClass} showBack={this.state.showBacks}/>
+          );
+        }, this);
+    }
+    // var classType = {""}[this.state.type]
+
+    return (
+      <div>
+        <div className="cards" >
+          {cardNodes}
+        </div>
       </div>
     );
   }
 });
 
+
 ReactDOM.render(
-  <Cards url="api/cards.json" pollInterval={5000} type=""/>, //{document.getElementById("cards_builder").dataset.json}
+  <Cards url="api/cards.json" pollInterval={5000} type="Бард"/>,
   document.getElementById('content')
 );

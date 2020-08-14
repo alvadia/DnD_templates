@@ -85,7 +85,7 @@ var Card = React.createClass({
         </div>
       );}
     }
-    return (JSON.stringify(this.props.data););
+    return (JSON.stringify(this.props.data));
   }
 });
 

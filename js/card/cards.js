@@ -30,7 +30,7 @@ var Card = React.createClass({
           </div>
         </div>
       );
-      else (
+      else if (
            (this.props.data.components && this.props.data.components.length)
         || (this.props.data.duration && this.props.data.duration.length)
         ) return (

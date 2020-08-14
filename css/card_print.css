@@ -34,13 +34,12 @@ body {
 	font-family: Forum; 
 	height: 88mm;
 	width: 63mm;
-	/*background-image: url('../pics/preview-Arcane-front3.jpg');*/
+        background-image: url('../pics/preview-Arcane-front3.jpg');
 	background-color:  #C03E2E;
 	background-size: 63mm ;
 	padding: 2.2mm 2.2mm;
 	box-sizing: border-box;
-	/*margin-bottom: 1px;*/
-    border-bottom: 2px solid #fff;
+        border-bottom: 2px solid #fff;
 	margin-right: 1px;
 
 	background-color: #999;
@@ -88,8 +87,6 @@ body {
 	width: 50%;
 	height: 7.9mm;
 	float: left;
-	/*border: 1px solid #C03E2E;*/
-	/*border: none; */
 	border: 0px solid #999;
 	box-sizing:border-box ;
 }
@@ -138,36 +135,27 @@ body {
 	box-sizing:border-box;
 	position: relative;
 	background-color: #fff;
-        font-size: 2.3mm;
-        line-height: 2.3mm;
-        margin-top: 1.3mm;
-        margin-bottom: 1.3mm;
+	font-weight: normal;
         padding: 0 1.9mm;
 }
 
 .text.med p{
-	height: 71mm;
+	height: 64mm;
 	border-radius: 0 0 2mm 2mm ;
 	box-sizing:border-box;
 	position: relative;
 	background-color: #fff;
-        font-size: 2.3mm;
-        line-height: 2.3mm;
-        margin-top: 1.3mm;
-        margin-bottom: 1.3mm;
+	font-weight: normal;
         padding: 0 1.9mm;
 }
 
 .text.min p{
-	height: 70mm;
+	height: 56mm;
 	border-radius: 0 0 2mm 2mm ;
 	box-sizing:border-box;
 	position: relative;
 	background-color: #fff;
-        font-size: 2.3mm;
-        line-height: 2.3mm;
-        margin-top: 1.3mm;
-        margin-bottom: 1.3mm;
+	font-weight: normal;
         padding: 0 1.9mm;
 }
 

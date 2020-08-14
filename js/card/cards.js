@@ -34,7 +34,7 @@ var Card = React.createClass({
       else if (
            (this.props.data.components && this.props.data.components.length)
         || (this.props.data.duration && this.props.data.duration.length)
-        ) {return (
+        ) {return ("
         <div className="card_med">
           <p>card_med</p>
           <div className="title"><span className="fs">{this.props.data.name}</span></div>
@@ -85,6 +85,7 @@ var Card = React.createClass({
         </div>
       );}
     }
+    return (JSON.stringify(this.props.data););
   }
 });
 
@@ -184,7 +185,7 @@ var Cards = React.createClass({
         }, this);
       return (
       <div className="cards">
-      <p> This is Cards javascript 4 </p>
+      <p> This is Cards javascript 5 </p>
           {cardNodes.join('')}
       </div>
     );

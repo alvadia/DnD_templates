@@ -184,7 +184,7 @@ var Cards = React.createClass({
         }, this);
       return (
       <div className="cards">
-      <p> This is Cards javascript 2 </p>
+      <p> This is Cards javascript 3 </p>
           {cardNodes}
       </div>
     );

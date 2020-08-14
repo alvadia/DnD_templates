@@ -180,7 +180,7 @@ var Cards = React.createClass({
   showBacksChange: function(event) {
     this.setState({showBacks: !this.state.showBacks  });
   },
-  render: function() 
+  render: function() {
       var cardNodes = ''
       cardNodes = arr.map(function(card) {
         return (

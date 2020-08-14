@@ -24,7 +24,7 @@ var Card = React.createClass({
         ) return (
         <div className="card_big">
           <div className="title"><span className="fs">{this.props.data.name}</span></div>
-          <CardText text={this.props.data.text} bigName={bigName} size="max" font = this.props.data.font/>
+          <CardText text={this.props.data.text} bigName={bigName} size="max" font={this.props.data.font}/>
           <div className="footer">
             {this.props.data.level}
           </div>
@@ -47,7 +47,7 @@ var Card = React.createClass({
                 <div className="propValue">{this.props.data.range}</div>
               </div>
           </div>
-          <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName} size="med" font = this.props.data.font/>
+          <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName} size="med" font={this.props.data.font}/>
           <div className="footer">
             {this.props.data.level}
           </div>
@@ -75,7 +75,7 @@ var Card = React.createClass({
                 <div className="propValue">{this.props.data.duration}</div>
               </div>
           </div>
-          <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName} size="min" font=this.props.data.font/>
+          <CardText text={this.props.data.text} hightlevel={this.props.data.hightlevel} bigName={bigName} size="min" font={this.props.data.font}/>
           <div className="footer">
             {this.props.data.level}
           </div>
@@ -138,9 +138,7 @@ var Cards = React.createClass({
       cache: false,
       success: function(data) {
         var text = data.replace(/\r\n/g,' ')
-        var arr = JSON.parse(text);
-        this.cards = arr.cards;
-        # this.setState({selectedClass: 'Все'});
+        this.cards = JSON.parse(text);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());

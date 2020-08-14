@@ -183,7 +183,7 @@ var Cards = React.createClass({
           {this.cards.map(
             function(card) {
             return (<Card data={card} showBack={this.state.showBacks}/>);
-            })
+            }, this)
           }
         </div>
     );

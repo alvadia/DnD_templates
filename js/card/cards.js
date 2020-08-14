@@ -187,8 +187,8 @@ var Cards = React.createClass({
         }, this);
       return (
       <div className="cards">
-      <p> This is Cards javascript 8 </p>
-      JSON.stringify(this.cards)
+      <p> This is Cards javascript 9 </p>
+        {JSON.stringify(this.cards)}
       </div>
     );
   }

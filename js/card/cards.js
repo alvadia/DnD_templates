@@ -187,7 +187,7 @@ var Cards = React.createClass({
         }, this);
       return (
       <div className="cards">
-      <p> This is Cards javascript 5 </p>
+      <p> This is Cards javascript 7 </p>
           {cardNodes.join('')}
       </div>
     );

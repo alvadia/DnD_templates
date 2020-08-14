@@ -187,7 +187,7 @@ var Cards = React.createClass({
         }, this);
       return (
       <div className="cards">
-      <p> This is Cards javascript 7 </p>
+      <p> This is Cards javascript 8 </p>
       <Card data={this.cards[0]} showBack={this.state.showBacks}/>
       JSON.stringify(cardNodes)
       </div>
